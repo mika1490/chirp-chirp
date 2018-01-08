@@ -16,18 +16,18 @@ var counter = {
 }
 
 function countLetters(counter, sample_text) {
-    let text = sample_text.toLowerCase();
-    if (sample_text.length === 0) {
-      return counter;
-    }
-    let letter = text.slice(0,1);
-    if([letter]) {
-      counter[letter]++
-    }
-    
-    return countLetters(counter, text.slice(1));
+  let text = sample_text.toLowerCase();
+  if (sample_text.length === 0) {
+    return counter;
   }
-    $(document).ready(function () {
-      countLetters(counter, sample_text);
-      $("#result").html(JSON.stringify(counter));
-    });
+  let letter = text.slice(0, 1);
+  if ([letter]) {
+    counter[letter]++
+  }
+
+  return countLetters(counter, text.slice(1));
+}
+$(document).ready(function () {
+  countLetters(counter, sample_text);
+  $("#result").html(JSON.stringify(counter));
+});
